@@ -40,3 +40,35 @@ section {
     z-index: -1;
     background-color: rgb(0, 0, 0);
   }
+
+  .bg::after {
+    content: "";
+    left: 0;
+    top: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.589);
+  }
+
+  a {
+    text-decoration: none;
+    color: whitesmoke;
+  }
+
+  h1 {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    font-size: 40px;
+    letter-spacing: 10px;
+    color: whitesmoke;
+    text-transform: uppercase;
+    position: relative;
+  }
+  
+  .container h1 span {
+    margin-right: 50px;
+    display: inline-block;
+  }
+  
