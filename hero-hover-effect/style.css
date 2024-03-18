@@ -71,4 +71,25 @@ section {
     margin-right: 50px;
     display: inline-block;
   }
+
+  @keyframes anima {
+    0% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
   
+    100% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .mobile-text {
+      display: block;
+    }
+  
+    .text {
+      display: none;
+    }
+  }  
