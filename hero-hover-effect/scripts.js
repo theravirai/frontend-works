@@ -15,5 +15,12 @@ childEls.forEach((el) => {
       });
       bgEl.style.display = "block";
       bgEl.style.animation = "anima 1s ease forwards";
+  
+      // line animation
+      const cords = el.getBoundingClientRect();
+      const textCords = textEl.getBoundingClientRect();
+  
+      lineEl.style.width = cords.width + "px";
+      lineEl.style.left = cords.left - textCords.left + "px";
     });
   });
