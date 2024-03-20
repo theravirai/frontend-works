@@ -72,6 +72,31 @@ section {
     display: inline-block;
   }
 
+  #line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    /* Reduced height for a sleeker line */
+    width: 0;
+    /* Start with width at 0 for an animated effect */
+    background: linear-gradient(90deg, royalblue, cyan);
+    /* Gradient effect */
+    box-shadow: 0px 0px 10px rgba(65, 105, 225, 0.7);
+    /* Soft glow effect */
+    pointer-events: none;
+    z-index: -1;
+    transition: width 0.4s ease, box-shadow 0.3s ease;
+    /* Smooth animation */
+  }
+  
+  .word:hover~#line {
+    width: 100%;
+    /* Line expands to full width on hover */
+    box-shadow: 0px 0px 20px rgba(65, 105, 225, 1);
+    /* Stronger glow effect */
+  }
+
   @keyframes anima {
     0% {
       opacity: 0.6;
