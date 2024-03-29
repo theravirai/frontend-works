@@ -97,6 +97,15 @@ section {
     /* Stronger glow effect */
   }
 
+  .container p {
+    color: whitesmoke;
+    font-size: 20px;
+    max-width: 600px;
+    margin-top: 20px;
+    line-height: 30px;
+    text-align: justify;
+  }
+  
   @keyframes anima {
     0% {
       opacity: 0.6;
