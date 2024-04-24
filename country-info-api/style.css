@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+    /* normal (light) colors. */
+    --background_color_el: hsl(0, 0%, 100%);
+    --body_color: hsl(0, 0%, 90%);
+}
+
+/* placeholder text color. */
+.search::placeholder {
+    color: inherit;
+}
+
+body {
+    background-color: var(--body_color);
+    color:hsl(200, 15%, 8%);
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+body.dark {
+    /* define the dark mode colors. */
+    --body_color: hsl(207, 26%, 17%);
+    --background_color_el: hsl(209, 23%, 22%);
+    /* different bg dark color, to distinguish it better. */
+    background-color: hsl(207, 26%, 17%);
+    color: white; /* text color. */
+}
+
+header {
+    background-color: var(--background_color_el);
+    padding: 0px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+header.dark {
+    background-color: var(--background_color_el);
+}
+
+h1 {
+    margin: 0;
+}
