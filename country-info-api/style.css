@@ -44,3 +44,40 @@ header.dark {
 h1 {
     margin: 0;
 }
+
+/* button styling. */
+.btn-dark-mode {
+    background-color: var(--background_color_el);
+    color: inherit;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-dark-mode:hover {
+    filter: brightness(110%);
+}
+
+.btn-dark-mode .fas {
+    display: none;
+}
+
+body.dark .btn-dark-mode .fas {
+    display: inline-block;
+}
+
+body.dark .btn-dark-mode .far {
+    display: none;
+}
+
+/* input styling. */
+.search {
+    background-color: var(--background_color_el);
+    color: inherit;
+    font-size: 14px;
+    padding: 20px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    min-width: 300px;
+}
