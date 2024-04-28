@@ -77,3 +77,86 @@ function display_countries(countries)
         countries_el.appendChild(country_el);
     });
 }
+function show_country_details(country)
+{
+    //console.log(typeof country);
+    const modal_body = modal.querySelector('.modal-body');
+    const modal_img = modal.querySelector('img');
+
+    modal_img.src = country.flags.svg;
+
+    {
+        // extract all JSON keys from under country.currencies
+        currencies = Object.keys(country.currencies);
+        //console.log("currencies: " + currencies);
+
+        var currencies_list = '';
+
+        currencies.forEach(key => {
+        //console.log("key: " + key); // e.g.: AFN.
+        // country -> currencies -> AFN -> name (which has the value of "Afagan afghani")
+        //console.log("name: " + country.currencies[key].name);
+        currencies_list = currencies_list + country.currencies[key].name + ', ';
+        });
+        currencies_list = currencies_list.slice(0, -2); // remove the last comma.
+        //console.log("currencies_list: " + currencies_list);
+    }
+
+    {
+        languages = Object.keys(country.languages);
+        //console.log("languages: " + languages);
+
+        var languages_list = '';
+
+        languages.forEach(key => {
+        //console.log("key: " + key);
+        //console.log("name: " + country.languages[key]);
+        languages_list = languages_list + country.languages[key] + ', ';
+        });
+        languages_list = languages_list.slice(0, -2); // remove the last comma.
+        //console.log("languages_list: " + languages_list);
+    }
+
+    modal_body.innerHTML = `
+        <h2 class=country-name">${country.name.common}</h2>
+        <p>
+            <strong>CCA2:</strong>
+            ${country.cca2}
+        <p>
+            <strong>Region:</strong>
+            ${country.region}
+        </p>
+        <p>
+            <strong>Area:</strong>
+            ${country.area}
+        </p>
+        <p>
+            <strong>Capital:</strong>
+            ${country.capital}
+        </p>
+        <p>
+            <strong>Population:</strong>
+            ${country.population.toLocaleString()}
+        </p>
+        <p>
+            <strong>latlng:</strong>
+            ${country.latlng}
+        </p>
+        <p>
+            <strong>Time Zones:</strong>
+            ${country.timezones}
+        </p>
+        <p>
+            <strong>Currencies:</strong>
+            ${currencies_list}
+        </p>
+        <p>
+            <strong>Languages:</strong>
+            ${languages_list}
+        </p>
+        <p>
+            <strong>Borders:</strong>
+            ${country.borders}
+        </p>
+    `;
+}
