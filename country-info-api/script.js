@@ -160,3 +160,21 @@ function show_country_details(country)
         </p>
     `;
 }
+
+// enable dark mode by default.
+document.body.classList.toggle('dark');
+
+// toggle the dark class.
+darkmode_btn.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+});
+
+// toggle the filter class.
+filter_btn.addEventListener('click', () => {
+    filter_btn.classList.toggle('open');
+});
+
+// close the modal.
+close_btn.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
