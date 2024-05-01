@@ -133,3 +133,95 @@ img {
     max-width: 100%;
     max-height: 200px;
 }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    margin: auto;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+    /* position: relative; */
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    margin: 10px;
+    background-color: var(--background_color_el);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card:hover {
+    filter: brightness(110%);
+}
+
+.card img {
+    object-fit: cover;
+    height: 180px;
+    width: 100%;
+}
+
+.card-header {
+    margin: 0;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body h2 {
+    margin: 0;
+}
+
+.container.countries {
+    justify-content: center;
+}
+
+/* modal styling. */
+.modal {
+    background-color: inherit;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+.container:hover {
+    filter: brightness(110%);
+}
+
+.modal .container {
+    background-color: var(--background-el);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.modal img {
+    max-width: 300%;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.btn-close {
+    border: none;
+    position: relative;
+    top: -200px;
+    right: -600px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn-close:hover {
+    filter: brightness(110%);
+}
