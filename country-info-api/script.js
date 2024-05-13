@@ -209,3 +209,25 @@ search_el.addEventListener('input', (e) => {
         //alert("No results!");
     }
 });
+
+// add a filter on the li inside the .dropdown.
+filter_region.forEach(filter => {
+    filter.addEventListener('click', (e) => {
+        filter_value = filter.innerHTML;
+        //console.log(filter_value);
+
+        const query_list = document.querySelectorAll('.country-region');
+
+        // use the HTML that we already have in the DOM.
+        // and only apply a style on it, hiding or showing it.
+        query_list.forEach((i) => {
+            console.log("innerText: " + i.innerText);
+            if (i.innerText.includes(filter_value) || filter_value === 'All') {
+                i.parentElement.parentElement.style.display = 'block';
+            } else {
+                // do not show it.
+                i.parentElement.parentElement.style.display = 'none';
+            }
+        });
+    });
+});
