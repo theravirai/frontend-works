@@ -12,9 +12,8 @@ get_countries();
 
 
 // sort an array by name.common key.
-function sort_by_key(array)
-{
-    return array.sort(function(a, b) {
+function sort_by_key(array) {
+    return array.sort(function (a, b) {
         //console.log(a.name.common);
         var x = a.name.common;
         var y = b.name.common;
@@ -22,8 +21,7 @@ function sort_by_key(array)
     });
 }
 
-async function get_countries()
-{
+async function get_countries() {
     const res = await fetch('https://restcountries.com/v3.1/all');
     const countries = await res.json();
 
@@ -35,15 +33,14 @@ async function get_countries()
     display_countries(countries);
 }
 
-function display_countries(countries)
-{
+function display_countries(countries) {
     // clear the element before displaying the countries.
     countries_el.innerHTML = '';
 
     countries.forEach(country => {
         const country_el = document.createElement('div');
         country_el.classList.add('card');
-    
+
         country_el.innerHTML = `
             <div class="card-header">
                 <img src="${country.flags.svg}" alt="Peru">
@@ -69,7 +66,7 @@ function display_countries(countries)
 
         //console.log(typeof country);
 
-        country_el.addEventListener('click', () =>  {
+        country_el.addEventListener('click', () => {
             modal.style.display = 'flex';
             show_country_details(country);
         });
@@ -77,8 +74,7 @@ function display_countries(countries)
         countries_el.appendChild(country_el);
     });
 }
-function show_country_details(country)
-{
+function show_country_details(country) {
     //console.log(typeof country);
     const modal_body = modal.querySelector('.modal-body');
     const modal_img = modal.querySelector('img');
@@ -93,10 +89,10 @@ function show_country_details(country)
         var currencies_list = '';
 
         currencies.forEach(key => {
-        //console.log("key: " + key); // e.g.: AFN.
-        // country -> currencies -> AFN -> name (which has the value of "Afagan afghani")
-        //console.log("name: " + country.currencies[key].name);
-        currencies_list = currencies_list + country.currencies[key].name + ', ';
+            //console.log("key: " + key); // e.g.: AFN.
+            // country -> currencies -> AFN -> name (which has the value of "Afagan afghani")
+            //console.log("name: " + country.currencies[key].name);
+            currencies_list = currencies_list + country.currencies[key].name + ', ';
         });
         currencies_list = currencies_list.slice(0, -2); // remove the last comma.
         //console.log("currencies_list: " + currencies_list);
@@ -109,9 +105,9 @@ function show_country_details(country)
         var languages_list = '';
 
         languages.forEach(key => {
-        //console.log("key: " + key);
-        //console.log("name: " + country.languages[key]);
-        languages_list = languages_list + country.languages[key] + ', ';
+            //console.log("key: " + key);
+            //console.log("name: " + country.languages[key]);
+            languages_list = languages_list + country.languages[key] + ', ';
         });
         languages_list = languages_list.slice(0, -2); // remove the last comma.
         //console.log("languages_list: " + languages_list);
