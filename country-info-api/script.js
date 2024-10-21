@@ -53,7 +53,7 @@ function display_countries(countries) {
                     <strong>Codes: </strong>${country.cca2}, ${country.cca3}
                 </p>
                 <p class="country-capital">
-                    <strong>Capital: </strong>${country.capital}
+                    <strong>Capital: </strong>${country.capital ? country.capital[0] : "N/A"}
                 </p>
                 <p class="country-region">
                     <strong>Region: </strong>${country.region}
@@ -128,7 +128,7 @@ function show_country_details(country) {
         </p>
         <p>
             <strong>Capital:</strong>
-            ${country.capital}
+            ${country.capital ? country.capital[0] : "N/A"}
         </p>
         <p>
             <strong>Population:</strong>
