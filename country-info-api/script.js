@@ -79,7 +79,7 @@ function show_country_details(country) {
     const modal_body = modal.querySelector('.modal-body');
     const modal_img = modal.querySelector('img');
 
-    modal_img.src = country.flags.svg;
+    modal_img.src = country.flags?.svg || country.flags?.png;
 
     {
         // extract all JSON keys from under country.currencies
