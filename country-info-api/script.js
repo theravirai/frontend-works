@@ -83,7 +83,14 @@ function show_country_details(country) {
 
     {
         // extract all JSON keys from under country.currencies
-        currencies = Object.keys(country.currencies);
+        let currencies_list = 'N/A';
+
+        if (country.currencies) {
+
+          currencies_list = Object.values(country.currencies)
+            .map(currency => currency.name)
+            .join(', ');
+    }
         //console.log("currencies: " + currencies);
 
         var currencies_list = '';
