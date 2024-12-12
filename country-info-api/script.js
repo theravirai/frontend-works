@@ -21,15 +21,25 @@ function sort_by_key(array) {
 }
 
 async function get_countries() {
-  const res = await fetch("https://restcountries.com/v3.1/all");
-  const countries = await res.json();
+  try {
+    const res = await fetch("https://restcountries.com/v3.1/all");
 
-  //console.log(countries); // unsorted, as they come from the API.
-  //countries_sorted = sort_by_key(countries);
-  sort_by_key(countries);
-  //console.log(countries_sorted);
+    if (!res.ok) {
+      throw new Error("Failed to fetch countries");
+    }
 
-  display_countries(countries);
+    const countries = await res.json();
+
+    sort_by_key(countries);
+
+    display_countries(countries);
+  } catch (error) {
+    console.error(error);
+
+    countries_el.innerHTML = `
+            <h2>Failed to load countries</h2>
+        `;
+  }
 }
 
 function display_countries(countries) {
