@@ -56,7 +56,10 @@ function display_countries(countries) {
 
     country_el.innerHTML = `
       <div class="card-header">
-        <img src="${country.flags.png}" alt="${country.name.common}">
+        <img 
+          src="${country.flags.svg}" 
+          alt="${country.name.common}"
+        >
       </div>
 
       <div class="card-body">
@@ -92,7 +95,7 @@ function show_country_details(country) {
   const modal_body = modal.querySelector(".modal-body");
   const modal_img = modal.querySelector("img");
 
-  modal_img.src = country.flags;
+  modal_img.src = country.flags.svg;
 
   // Currencies
   let currencies_list = "N/A";
